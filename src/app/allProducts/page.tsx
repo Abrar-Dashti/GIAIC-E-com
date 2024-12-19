@@ -1,80 +1,147 @@
-import { CircleCheck, CreditCard, Fullscreen, Sprout, Truck } from "lucide-react"
-import { Checkbox } from "@/components/ui/checkbox"
-import Image from "next/image"
-import Banner1 from "./components/banner1"
-import Products from "./components/productbanner"
-import Brand from "./components/brandbanner"
-import Header1 from "./components/header1"
-import Link from "next/link"
+import Header1 from "../components/header1";
+import Image from "next/image";
+import Link from "next/link";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+} from "@/components/ui/navigation-menu"
+import Products from "../components/productbanner";
+import Products2 from "../components/productbanner2";
+import Products3 from "../components/productbanner3";
 
-export default function Homepage() {
+
+export default function Allproducts() {
   return (
-    <main className="font-sans">
+    <div className="font-sans">
       <Header1 />
-      <div id="pc" className="hidden md:block">
-      <div className="flex items-center justify-center h-[40rem] bg-cover w-auto bg-[url(/landingPagePic.jpg)]">
-        {/* <Image src='/landingPagePic.jpg' alt='Pic1' width={1520} height={500} objectFit="contain" className="brightness-[82%]" /> */}
-          <div className="absolute right-40">
-          <div className="bg-white flex flex-col rounded-sm justify-between items-start p-10 min-h-80 min-w-[28rem] max-h-96 max-w-[38rem] ml-5">
-            <div className="space-y-3">
-            <h3 className="text-2xl font-light">Luxury homeware for people who love timeless design quality</h3>
-            <h4 className="text-sm text-gray-600">shop new spring 2022 collection today</h4>
-            </div>
-            <div>
-              <Link href="./allProducts" className="text-gray-600 bg-gray-200 hover:bg-gray-300 hover:text-gray-700 transition-all duration-300 p-2 rounded-md">View collection</Link>
-            </div>
-          </div>
-          </div>
-      </div>
+      <div className="bg-[url(/blackChair.jpg)] w-full h-40 bg-cover bg-center font-semibold px-10 text-2xl text-white py-7 flex items-end justify-start">
+        <h3>
+          All Products
+        </h3>
       </div>
 
-      <div id="mobile" className="block md:hidden">
-        <div className="bg-white flex flex-col flex-wrap rounded-sm justify-center gap-5 max-w-full items-center p-5 h-60 max-h-96">
-            <div className="space-y-3">
-            <h3 className="sm:text-xl text-[110%] md:text-2xl font-light max-w-[28rem]">Luxury homeware for people who love timeless design quality</h3>
-            <h4 className="text-xs text-gray-600">With our new collection, view over 400 bespoke pieces from homeware through to furniture today</h4>
-            </div>
-            <div>
-              <button className="text-gray-600 bg-gray-200 hover:bg-gray-300 transition-all duration-300 p-2 rounded-md w-[13rem] sm:w-60">View collection</button>
-            </div>
+      <div className="hidden sm:block">
+        <div className="flex items-center justify-between p-5">
+        <div>
+        <NavigationMenu>
+          <NavigationMenuList>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Category</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                  <li className="row-span-3">
+                    <NavigationMenuLink asChild>
+                      <a
+                        className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                        href="/"
+                      >
+                        <div className="mb-2 mt-4 text-lg font-medium">
+                          shadcn/ui
+                        </div>
+                        <p className="text-sm leading-tight text-muted-foreground">
+                          Beautifully designed components that you can copy and
+                          paste into your apps. Accessible. Customizable. Open
+                          Source.
+                        </p>
+                      </a>
+                    </NavigationMenuLink>
+                  </li>
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Product type</NavigationMenuTrigger>
+              <NavigationMenuContent>
+              <NavigationMenuLink>
+                <div className="p-5">
+                Select type
+                </div>
+                </NavigationMenuLink>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Price</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <NavigationMenuLink>
+                <div className="p-5">
+                Pricings
+                </div>
+                </NavigationMenuLink>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Brand</NavigationMenuTrigger>
+              <NavigationMenuContent>
+              <NavigationMenuLink>
+                <div className="p-5">
+                Select brand
+                </div>
+                </NavigationMenuLink>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
+        </div>
+        
+        <div className="flex justify-center items-center">
+          <div>
+            Sorted By:
           </div>
           <div>
-            <Image src='/landingPagePic.jpg' alt='Pic1' width={1000} height={1000} objectFit="contain" className="brightness-[82%]" />
+            <NavigationMenu>
+            <NavigationMenuList>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Date added</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <input type="date" />
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+            </NavigationMenuList>
+            </NavigationMenu>
           </div>
+        </div>
+
+      </div>
+      </div>
+      <div className="sm:hidden block">
+        <NavigationMenu className="">
+          <NavigationMenuList className="w-screen p-3 flex items-center justify-around">
+            <NavigationMenuItem className="bg-gray-100 rounded-md w-28 text-center">
+              <NavigationMenuTrigger className="bg-gray-100">Filter</NavigationMenuTrigger>
+              <NavigationMenuContent className="p-5">
+                <div>Price From 0 to 99</div>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+            <NavigationMenuItem className="bg-gray-100 rounded-md w-28 text-center">
+              <NavigationMenuTrigger className="bg-gray-100">Sorting</NavigationMenuTrigger>
+              <NavigationMenuContent  className="p-5">
+                <div>Sort by name</div>
+                <div>Sort by price</div>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
       </div>
 
-    <Brand head="What makes our brand different" title1="Next day as standard" description1="order before 3pm and get your order the next day as standard" title2="Made by true artisans" description2="Handmade crafted goods made with real passion and craftmanship" title3="Unbeatable prices" description3="For our materials and quality you won't find better prices anywhere" title4="Recycled packaging" description4="We  use 100% recycled to ensure our footprint is more manageable" />
-    
+      <div className="mt-5">
+                <Products2 phead="" ptitle1="The lucy lamp" pprice1="399" ptitle2="Rustic vase set" pprice2="155" ptitle3="The silky vase" pprice3="125" ptitle4="The dandy chair" pprice4="250"/>
+      </div>
 
-    <Products phead="" ptitle1="The Dandy chair" pprice1="155" ptitle2="Rusic vase set" pprice2="45" ptitle3="Silky vase" pprice3="667" ptitle4="Lamp" pprice4="800" />
-
-    <div className="p-5 sm:p-10 flex flex-row flex-wrap gap-5 md:gap-10 items-center justify-center">
-    <Banner1 title='It all started as small idea' description='A global brand with a local begining, our story begins in a small studio in south london in early 2014' text='View collection' />
       <div>
-        <Image src='/endPic.jpg' alt="Footer Pic" width={500} height={500} objectFit="cover" />
+      <Products3 phead="" ptitle1="The lucy lamp" pprice1="399" ptitle2="Rustic vase set" pprice2="155" ptitle3="The silky vase" pprice3="125" ptitle4="The dandy chair" pprice4="250"/>
       </div>
-    </div>
 
-    <div id="upperFooter" className="text-white text-sm gap-3 md:gap-5 w-full h-96 bg-[url('/footerPic4.jpg')] bg-fill flex flex-col justify-center items-start sm:items-center p-4">
       <div>
-        <h3 className="text-2xl font-light md:text-3xl text-gray-100">Join the club and get the benefits</h3>
+      <Products phead="" ptitle1="The lucy lamp" pprice1="399" ptitle2="Rustic vase set" pprice2="155" ptitle3="The silky vase" pprice3="125" ptitle4="The dandy chair" pprice4="250"/>
       </div>
-      <div>
-        <h4 className="text-sm font-extralight text-gray-200 max-w-96 md:text-center">Sign up for our newsletter and recieve exclusive offers on new ranges, sale, pop up stores and more</h4>
-      </div>
-      <div className="flex flex-col sm:flex-row justify-center gap-5 font-extralight text-gray-100">
-      <label><Checkbox className="bg-white border-white outline-none rounded-full mr-2" />Exclusive offers</label>
-      <label><Checkbox className="bg-white border-white outline-none rounded-full mr-2" />Free events</label>
-      <label><Checkbox className="bg-white border-white outline-none rounded-full mr-2" />Large discount</label>
-      </div>
-      <div className="w-full flex items-center justify-center">
-        <input type="text" placeholder="your@email.com" className="w-full md:max-w-72 p-4 font-light outline-none text-gray-800 " />
-        <button className="bg-[#6258af] p-4 w-32 font-extralight">Sign up</button>
-      </div>
-      
-    </div>
 
-    <div className="p-5 md:p-10  bg-[#2A254B] flex flex-col gap-5">
+      <div className="p-5 md:p-10  bg-[#2A254B] flex flex-col gap-5">
     <div className="text-white flex flex-col md:flex-row md:justify-around items-center md:items-start gap-8 md:gap-20 text-sm font-extralight">
     <div id="footer" className="w-full flex flex-row flex-wrap gap-5 justify-between">
       <div>
@@ -159,6 +226,7 @@ export default function Homepage() {
     </div>
     </div>
     </div>
-    </main>
+
+    </div>
   )
 }

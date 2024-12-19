@@ -1,80 +1,85 @@
-import { CircleCheck, CreditCard, Fullscreen, Sprout, Truck } from "lucide-react"
-import { Checkbox } from "@/components/ui/checkbox"
-import Image from "next/image"
-import Banner1 from "./components/banner1"
-import Products from "./components/productbanner"
-import Brand from "./components/brandbanner"
-import Header1 from "./components/header1"
-import Link from "next/link"
+import Btn1 from "../components/button1";
+import Header1 from "../components/header1";
+import Image from "next/image";
+import Link from "next/link";
 
-export default function Homepage() {
-  return (
-    <main className="font-sans">
-      <Header1 />
-      <div id="pc" className="hidden md:block">
-      <div className="flex items-center justify-center h-[40rem] bg-cover w-auto bg-[url(/landingPagePic.jpg)]">
-        {/* <Image src='/landingPagePic.jpg' alt='Pic1' width={1520} height={500} objectFit="contain" className="brightness-[82%]" /> */}
-          <div className="absolute right-40">
-          <div className="bg-white flex flex-col rounded-sm justify-between items-start p-10 min-h-80 min-w-[28rem] max-h-96 max-w-[38rem] ml-5">
-            <div className="space-y-3">
-            <h3 className="text-2xl font-light">Luxury homeware for people who love timeless design quality</h3>
-            <h4 className="text-sm text-gray-600">shop new spring 2022 collection today</h4>
+export default function ShoppingBasket() {
+    return (
+        <div className="font-sans">
+            <Header1 />
+
+            <div className="sm:p-16 p-5 text-gray-600  bg-gray-50">
+                <div className="sm:text-3xl text-2xl text-gray-800 font-semibold">
+                    <h2>Your shopping cart</h2>
+                </div>
+                <div className="hidden sm:block">
+                <div className="mt-10 text-xl flex items-center justify-between">
+                    <h2>Product</h2>
+                    <div className="flex gap-72">
+                    <h2>Quantity</h2>
+                    <h2>Total</h2>
+                    </div>
+                </div>
+                </div>
+                <hr className="mt-5 hidden sm:block" />
+
+                <div>
+                    <div className=" mt-10 flex justify-between">
+                        <div className="flex sm:gap-5 gap-3">
+                        <Image src='/Silkyvase.jpg' width={500} height={500} alt="silky vase" objectFit="cover" quality={100} className="w-24 h-32 sm:w-40 sm:h-52" />
+                        <div className="sm:w-48 w-full text-gray-800 sm:text-2xl text-xl flex flex-col justify-around">
+                            <h3>Graystone vase</h3>
+                            <p className="text-sm text-gray-600">A timeless ceramic vase with a tri color gray glaze</p>
+                            <h4 className="sm:text-xl text-lg">£85</h4>
+                        </div>
+                        </div>
+                        <div className="hidden sm:flex gap-80">
+                        <div>
+                            1
+                        </div>
+                        <div>
+                        £85
+                        </div>
+                        </div>
+                    </div>
+
+                    <div className="mt-10 flex justify-between">
+                    <div className="flex gap-5">
+                        <Image src='/productImg2.jpg' width={500} height={500} alt="silky vase" objectFit="cover" quality={100} className="w-24 h-32 sm:w-40 sm:h-52" />
+                        <div className="w-48 text-gray-800 sm:text-2xl text-xl flex flex-col justify-around">
+                            <h3>Graystone vase</h3>
+                            <p className="text-sm text-gray-600">A timeless ceramic vase with a tri color gray glaze</p>
+                            <h4 className="sm:text-xl text-lg">£85</h4>
+                        </div>
+                        </div>
+                        <div className="hidden sm:flex gap-80">
+                        <div>
+                            1
+                        </div>
+                        <div>
+                        £125
+                        </div>
+                        </div>
+                    </div>
+
+                    <hr className="mt-5 sm:mt-10 border-t-2 border-gray-300" />
+                </div>
+
+                <div className="flex items-end justify-end">
+                    <div className="flex flex-col gap-4 p-2 sm:p-5">
+                    <div className="flex text-lg items-end justify-end gap-2">
+                        <h3>Subtotal</h3>
+                        <h4 className="text-2xl">£210</h4>
+                    </div>
+                    <div className="w-full flex flex-col gap-2 text-xs sm:text-lg sm:justify-end justify-center items-center sm:items-end">
+                        <p>Taxes and shipping are calculated at checkout</p>
+                        <Link href="#" className="w-full  md:w-44 bg-[#2A254B] hover:bg-[#3e3766] text-white transition-all duration-300 p-3 text-center">Go to checkout</Link>
+                    </div>
+                    </div>
+                </div>
             </div>
-            <div>
-              <Link href="./allProducts" className="text-gray-600 bg-gray-200 hover:bg-gray-300 hover:text-gray-700 transition-all duration-300 p-2 rounded-md">View collection</Link>
-            </div>
-          </div>
-          </div>
-      </div>
-      </div>
 
-      <div id="mobile" className="block md:hidden">
-        <div className="bg-white flex flex-col flex-wrap rounded-sm justify-center gap-5 max-w-full items-center p-5 h-60 max-h-96">
-            <div className="space-y-3">
-            <h3 className="sm:text-xl text-[110%] md:text-2xl font-light max-w-[28rem]">Luxury homeware for people who love timeless design quality</h3>
-            <h4 className="text-xs text-gray-600">With our new collection, view over 400 bespoke pieces from homeware through to furniture today</h4>
-            </div>
-            <div>
-              <button className="text-gray-600 bg-gray-200 hover:bg-gray-300 transition-all duration-300 p-2 rounded-md w-[13rem] sm:w-60">View collection</button>
-            </div>
-          </div>
-          <div>
-            <Image src='/landingPagePic.jpg' alt='Pic1' width={1000} height={1000} objectFit="contain" className="brightness-[82%]" />
-          </div>
-      </div>
-
-    <Brand head="What makes our brand different" title1="Next day as standard" description1="order before 3pm and get your order the next day as standard" title2="Made by true artisans" description2="Handmade crafted goods made with real passion and craftmanship" title3="Unbeatable prices" description3="For our materials and quality you won't find better prices anywhere" title4="Recycled packaging" description4="We  use 100% recycled to ensure our footprint is more manageable" />
-    
-
-    <Products phead="" ptitle1="The Dandy chair" pprice1="155" ptitle2="Rusic vase set" pprice2="45" ptitle3="Silky vase" pprice3="667" ptitle4="Lamp" pprice4="800" />
-
-    <div className="p-5 sm:p-10 flex flex-row flex-wrap gap-5 md:gap-10 items-center justify-center">
-    <Banner1 title='It all started as small idea' description='A global brand with a local begining, our story begins in a small studio in south london in early 2014' text='View collection' />
-      <div>
-        <Image src='/endPic.jpg' alt="Footer Pic" width={500} height={500} objectFit="cover" />
-      </div>
-    </div>
-
-    <div id="upperFooter" className="text-white text-sm gap-3 md:gap-5 w-full h-96 bg-[url('/footerPic4.jpg')] bg-fill flex flex-col justify-center items-start sm:items-center p-4">
-      <div>
-        <h3 className="text-2xl font-light md:text-3xl text-gray-100">Join the club and get the benefits</h3>
-      </div>
-      <div>
-        <h4 className="text-sm font-extralight text-gray-200 max-w-96 md:text-center">Sign up for our newsletter and recieve exclusive offers on new ranges, sale, pop up stores and more</h4>
-      </div>
-      <div className="flex flex-col sm:flex-row justify-center gap-5 font-extralight text-gray-100">
-      <label><Checkbox className="bg-white border-white outline-none rounded-full mr-2" />Exclusive offers</label>
-      <label><Checkbox className="bg-white border-white outline-none rounded-full mr-2" />Free events</label>
-      <label><Checkbox className="bg-white border-white outline-none rounded-full mr-2" />Large discount</label>
-      </div>
-      <div className="w-full flex items-center justify-center">
-        <input type="text" placeholder="your@email.com" className="w-full md:max-w-72 p-4 font-light outline-none text-gray-800 " />
-        <button className="bg-[#6258af] p-4 w-32 font-extralight">Sign up</button>
-      </div>
-      
-    </div>
-
-    <div className="p-5 md:p-10  bg-[#2A254B] flex flex-col gap-5">
+            <div className="p-5 md:p-10  bg-[#2A254B] flex flex-col gap-5">
     <div className="text-white flex flex-col md:flex-row md:justify-around items-center md:items-start gap-8 md:gap-20 text-sm font-extralight">
     <div id="footer" className="w-full flex flex-row flex-wrap gap-5 justify-between">
       <div>
@@ -159,6 +164,6 @@ export default function Homepage() {
     </div>
     </div>
     </div>
-    </main>
-  )
+        </div>
+    )
 }
