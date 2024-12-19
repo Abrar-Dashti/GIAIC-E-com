@@ -1,4 +1,4 @@
-import { CircleCheck, CreditCard, Fullscreen, Sprout, Truck } from "lucide-react"
+import { CircleCheck, CreditCard, Sprout, Truck } from "lucide-react"
 
 interface IBrand {
     head: string;

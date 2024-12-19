@@ -1,4 +1,3 @@
-import Btn1 from "../components/button1";
 import Header1 from "../components/header1";
 import Image from "next/image";
 import Link from "next/link";

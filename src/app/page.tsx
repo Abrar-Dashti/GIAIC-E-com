@@ -1,4 +1,3 @@
-import { CircleCheck, CreditCard, Fullscreen, Sprout, Truck } from "lucide-react"
 import { Checkbox } from "@/components/ui/checkbox"
 import Image from "next/image"
 import Banner1 from "./components/banner1"
